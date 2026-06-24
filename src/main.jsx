@@ -7,7 +7,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
 
-    <footer
+    {/* <footer
       style={{
         position: "fixed",
         bottom: 20,
@@ -31,6 +31,6 @@ createRoot(document.getElementById("root")).render(
       >
         Customer Support
       </a>
-    </footer>
+    </footer> */}
   </StrictMode>,
 );

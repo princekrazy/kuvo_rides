@@ -13,6 +13,7 @@ import DriverLoginPage from "./components/DriverLoginPage";
 import DriverSignupPage from "./components/DriverSignUp";
 import RideStatusScreen from "./components/RideStatusScreen";
 import WalletTopUp from "./components/WalletTopUp";
+import DriverRecruitmentLanding from "./components/Landing";
 function App() {
   return (
     <Router>
@@ -21,6 +22,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/become_driver" element={<DriverRecruitmentLanding />} />
         <Route path="/driversignup" element={<DriverSignupPage />} />
         <Route path="/driverhome" element={<DriverHomePage />} />
         <Route path="/driverlogin" element={<DriverLoginPage />} />

@@ -65,3 +65,94 @@ textarea:focus {
   outline: none;
   border-color: #2563eb;
 }
+.landing-page a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.landing-page .cta a {
+  background: gold;
+  color: black;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  display: inline-flex;
+  gap: 8px;
+  cursor: pointer;
+}
+.landing-page {
+  background: black !important;
+  color: white;
+  min-height: 100vh;
+}
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+.hero {
+  padding: 100px 0;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+}
+.hero h1 span {
+  color: gold;
+}
+.hero p {
+  max-width: 600px;
+  margin: 20px auto;
+  opacity: 0.85;
+}
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 60px 0;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #222;
+}
+.card svg {
+  width: 28px;
+  height: 28px;
+  color: gold;
+  margin-bottom: 10px;
+}
+.cta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cta a {
+  background: gold;
+  color: black;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.landing-page section {
+  padding: 70px 20px;
+}
+.requirements svg {
+  width: 28px;
+  height: 28px;
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.mission,
+.requirements,
+.final-cta {
+  text-align: center;
+}
+.requirements {
+  padding: 20px;
+  border-radius: 14px;
+}
