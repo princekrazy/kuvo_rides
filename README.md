@@ -1,16 +1,242 @@
-# React + Vite
+# Uber Clone Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project is a modern ride-hailing frontend built with React and MapLibre GL. It provides separate experiences for riders and drivers while maintaining real-time synchronization throughout the ride lifecycle.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application demonstrates real-time mapping, route visualization, persistent ride state management, authentication flows, and payment integration.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Why MapLibre?
 
-## Expanding the ESLint configuration
+Instead of using proprietary mapping solutions, this project uses MapLibre GL.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Benefits:
+
+* Fully open source
+* No vendor lock-in
+* High-performance vector rendering
+* Active community support
+* Suitable for production-scale mapping applications
+
+Package used:
+
+```javascript
+import maplibregl from "maplibre-gl";
+```
+
+---
+
+## Rider Experience
+
+### Authentication
+
+Riders can:
+
+* Register
+* Login
+* Persist sessions
+
+### Ride Request Flow
+
+1. Rider logs in
+2. Current location is automatically detected
+3. Location permission is requested
+4. Rider selects destination on map
+5. Route is calculated and displayed
+6. Estimated travel time is shown
+7. Ride price is calculated
+8. Ride request is submitted
+
+### Driver Matching
+
+After requesting a ride:
+
+* Rider enters a waiting screen
+* Available drivers receive the request
+* Once accepted, rider is automatically redirected
+
+### Live Driver Tracking
+
+When a driver accepts:
+
+* Driver information is displayed
+* Driver marker appears on the map
+* Marker updates continuously in real time
+* Rider can monitor driver approach
+
+This creates an experience similar to commercial ride-hailing platforms.
+
+### Ride Completion
+
+When the driver completes the trip:
+
+* Rider receives completion notification
+* Application resets ride state
+* Rider can request another ride
+
+---
+
+## Driver Experience
+
+### Authentication
+
+Drivers can:
+
+* Register
+* Login
+* Update profile information
+
+### Ride Discovery
+
+Drivers receive available ride requests.
+
+Before accepting a request they can preview:
+
+* Rider pickup route
+* Rider destination route
+* Distance information
+* Ride details
+
+### Ride Acceptance
+
+After accepting:
+
+* Driver becomes assigned to that ride
+* Additional ride requests are blocked
+* Live location sharing begins
+
+### Ride Completion
+
+Upon completion:
+
+* Ride status is finalized
+* Commission is deducted
+* Wallet balance is updated
+
+### Driver Wallet Logic
+
+Drivers begin with a wallet balance of:
+
+```text
+20
+```
+
+If balance drops below zero:
+
+* Driver is prevented from accepting rides
+* Warning messages are displayed
+* Balance must be restored before continuing
+
+---
+
+## Persistent Ride State
+
+One challenge in ride-hailing systems is accidental page refreshes or application closures.
+
+To solve this, the application uses Local Storage to preserve ride state.
+
+Benefits:
+
+* Users can continue active rides after reopening
+* Prevents duplicate ride requests
+* Prevents multiple ride acceptances
+* Improves reliability during network interruptions
+
+Examples of persisted state:
+
+* Active ride
+* Ride status
+* Driver assignment
+* Rider assignment
+
+---
+
+## Real-Time Features
+
+### Live Driver Location Updates
+
+Driver coordinates are continuously transmitted to the backend.
+
+The frontend listens for updates and:
+
+* Updates driver markers instantly
+* Animates movement across the map
+* Keeps rider and driver views synchronized
+
+### Route Visualization
+
+The application dynamically renders:
+
+* Pickup routes
+* Destination routes
+* Driver-to-rider routes
+
+Providing users with complete visibility throughout the ride process.
+
+---
+
+## Tech Stack
+
+* React
+* JavaScript
+* MapLibre GL
+* Local Storage
+* REST APIs
+* WebSockets
+* PayPal Integration
+
+---
+
+## Key Challenges Solved
+
+### Real-Time Synchronization
+
+Maintaining accurate driver movement while minimizing delays.
+
+### Session Recovery
+
+Recovering ride state after refreshes or accidental exits.
+
+### Ride Integrity
+
+Ensuring:
+
+* Riders cannot create multiple active rides
+* Drivers cannot accept multiple rides
+
+### Geolocation Handling
+
+Managing:
+
+* Browser location permissions
+* GPS updates
+* Route calculations
+* Dynamic map rendering
+
+---
+
+## Skills Demonstrated
+
+* React Development
+* Real-Time Applications
+* Mapping Technologies
+* Geolocation Services
+* State Persistence
+* WebSocket Integration
+* Payment Integration
+* UX Flow Design
+* Frontend Architecture
+
+---
+
+## Future Enhancements
+
+* Driver ratings
+* Push notifications
+* Ride history
+* ETA recalculation
+* Driver heat maps
+* Offline synchronization
+* Progressive Web App support
