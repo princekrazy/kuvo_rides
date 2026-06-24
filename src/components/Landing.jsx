@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/logo512.png";
 import {
   Car,
   DollarSign,
@@ -20,12 +21,12 @@ export default function DriverRecruitmentLanding() {
 
         <div className="container">
           <div className="logo">
-            <img src="/logo512.png" alt="Company Logo" />
+            <img src={logo} alt="Company Logo" />
           </div>
           <span className="badge">Kuvo Rides - Premium Airport Transport</span>
 
           <h1>
-            Turn Your SUV Into a<span>Reliable Income Stream</span>
+            Turn Your SUV Into a <span>Reliable Income Stream</span>
           </h1>
 
           <p>
