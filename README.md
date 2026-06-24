@@ -230,13 +230,44 @@ Managing:
 * Frontend Architecture
 
 ---
+## Live Demo
 
-## Future Enhancements
+**Frontend Application**
 
-* Driver ratings
-* Push notifications
-* Ride history
-* ETA recalculation
-* Driver heat maps
-* Offline synchronization
-* Progressive Web App support
+🚀 Live Demo: https://princekrazy.github.io/kuvo_rides/
+
+**Backend API**
+
+🔗 API Base URL: https://kuvo-api.onrender.com/api
+
+### Test Credentials
+
+You may optionally provide demo rider and driver accounts so recruiters can experience the complete ride workflow without creating accounts.
+
+### What Recruiters Can Test
+
+#### Rider Flow
+
+1. Register or log in
+2. Allow location access
+3. Select a destination on the map
+4. View route, ETA, and fare estimate
+5. Request a ride
+6. Wait for driver acceptance
+7. Track the driver's live location in real time
+8. Receive ride completion notification
+
+#### Driver Flow
+
+1. Register or log in
+2. Browse incoming ride requests
+3. Preview pickup and destination routes
+4. Accept a ride request
+5. Share live location updates
+6. Complete the ride
+7. View wallet balance updates and commission deductions
+
+### Note
+
+The application uses real-time location synchronization. For the best experience, test the rider and driver flows simultaneously using separate browser windows or devices.
+
